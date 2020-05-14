@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/dist/css/icon.css">
+  <link rel="stylesheet" href="/dist/css/default.css">
+  <link rel="stylesheet" href="/dist/css/flat-ui.min.css">
+  <link rel="stylesheet" href="/dist/css/main.css">
+
+  <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-default " role="navigation">
+    <a class="navbar-brand" href="#">多边形游戏 V1.0 beta</a>
+    <button type="button" class="navbar"></button>
+    <a class="navbar-brand" href="#">排行榜</a>
+  </nav><!-- /navbar -->
+
+  <div id="main">
+    <!--左侧-->
+    <div id="left">
+      <div id="game-describe">
+        <div id="game-describe-title">
+          <ul>
+            <li>新游戏</li>
+            <li>自定义游戏</li>
+          </ul>
+        </div>
+        <div id="game-describe-detail">
+          <ul>
+            <li><i class="iconfont icon-qiandai"></i> 顶点数量：随机</li>
+            <li><i class="iconfont icon-redu"></i> 顶点取值：随机</li>
+            <li>边运算符：随机</li>
+          </ul>
+        </div>
+        <div id="game-design">
+          <div id="vert-num">
+            顶点数量：
+            <select class="">
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
+          <div id="vert-value">
+            顶点取值：
+            <span id="vValue-set">设置</span>
+            <div id="background1">
+              <div class="set-div">
+                <div class="set-title">
+                  <span id="close-button"><i class="iconfont icon-shanchudelete30"></i></span>
+                  <h2>顶点取值设置</h2>
+                </div>
+                <div class="set-detail">
+                  <form>
+                    <label>顶点1：<input type="text" value="1"></label>
+                    <label>顶点2：<input type="text" value="1"></label><br>
+                    <label>顶点3：<input type="text" value="1"></label>
+                    <label>顶点4：<input type="text" value="1"></label><br>
+                    <label>顶点5：<input type="text" value="1"></label>
+                    <label>顶点6：<input type="text" value="1"></label><br>
+                    <label>顶点7：<input type="text" value="1"></label>
+                    <label>顶点8：<input type="text" value="1"></label><br>
+                    <label>顶点9：<input type="text" value="1"></label>
+                    <label>顶点10：<input type="text" value="1"></label><br>
+                  </form>
+                  <li id="confirm">确认</li>
+                  <li id="cancel">取消</li>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="edge-value">
+            边运算符：
+            <span id="eValue-set">设置</span>
+            <div id="background2">
+              <div class="set-div">
+                <div class="set-title">
+                  <span id="close-button">x</span>
+                  <h2>运算符设置</h2>
+                </div>
+                <div class="set-detail">
+                  <form>
+                    <label>边1：
+                      <select class="">
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label>
+                    <label>边2：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label><br>
+                    <label>边3：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label>
+                    <label>边4：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label><br>
+                    <label>边5：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label>
+                    <label>边6：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label><br>
+                    <label>边7：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label>
+                    <label>边8：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label><br>
+                    <label>边9：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label>
+                    <label>边10：
+                      <select>
+                        <option value="+">+</option>
+                        <option value="x">x</option>
+                      </select>
+                    </label><br>
+                  </form>
+                  <li id="confirm2">确认</li>
+                  <li id="cancel2">取消</li>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="game-control">
+        <ul>
+          <li>开始游戏</li>
+          <li>结束游戏</li>
+        </ul>
+      </div> -->
+    </div>
+    <!--左侧结束-->
+
+    <!--右侧-->
+    <div id="right">
+      <div id="game-panel">
+        <canvas id="canvas">
+          Your browser does not support the canvas element.
+        </canvas>
+      </div>
+      <!-- <div id="game-control">
+        <ul>
+          <li>开始游戏</li>
+          <li>结束游戏</li>
+        </ul>
+      </div> -->
+      <div id="game-hint">
+
+        <div id="arrow">
+          <div>←</div>
+          <div>→</div>
+        </div>
+        <div class="game-control">
+          <div class="gamegame" id="start">开始</div>
+          <div class="gamegame" id="end">结束</div>
+        </div>
+        <div id="best-way">最佳</div>
+      </div>
+    </div>
+    <!--右侧结束-->
+    <div id="background3">
+      <div class="res-div">
+        <div class="res-title">
+          <span id="close-button">x</span>
+          <h2>最佳路径</h2>
+        </div>
+        <div class="res-detail">
+          <p>中华人民共和国万岁！</p>
+          <li id="confirm3">确定</li>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="/dist/js/gameSetting.js"></script>
+</body>
+
+</html>
