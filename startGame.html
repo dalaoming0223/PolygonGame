@@ -17,7 +17,7 @@
   <nav class="navbar navbar-default " role="navigation">
     <a class="navbar-brand" href="#">多边形游戏 V1.0 beta</a>
     <button type="button" class="navbar"></button>
-    <a class="navbar-brand" href="#">排行榜</a>
+    <!-- <a class="navbar-brand" href="#">排行榜</a> -->
   </nav><!-- /navbar -->
 
   <div id="main">
@@ -34,12 +34,12 @@
           <ul>
             <li><i class="iconfont icon-qiandai"></i> 顶点数量：随机</li>
             <li><i class="iconfont icon-redu"></i> 顶点取值：随机</li>
-            <li>边运算符：随机</li>
+            <li><i class="iconfont icon-RectangleCopy"></i> 边运算符：随机</li>
           </ul>
         </div>
         <div id="game-design">
           <div id="vert-num">
-            顶点数量：
+            <i class="iconfont icon-fabu"></i> 顶点数量：
             <select class="numAmount">
               <option value="3">3</option>
               <option value="4">4</option>
@@ -52,7 +52,7 @@
             </select>
           </div>
           <div id="vert-value">
-            顶点取值：
+            <i class="iconfont icon-fabu"></i> 顶点取值：
             <span id="vValue-set">设置</span>
             <div id="background1">
               <div class="set-div">
@@ -80,7 +80,7 @@
             </div>
           </div>
           <div id="edge-value">
-            边运算符：
+            <i class="iconfont icon-fabu"></i> 边运算符：
             <span id="eValue-set">设置</span>
             <div id="background2">
               <div class="set-div">
@@ -184,8 +184,8 @@
       <div id="game-hint">
 
         <div id="arrow">
-          <div>←</div>
-          <div>→</div>
+          <!-- <div>←</div>
+          <div>→</div> -->
         </div>
         <div class="game-control">
           <div class="gamegame" id="start">开始</div>
@@ -202,15 +202,16 @@
           <h2>最佳路径</h2>
         </div>
         <div class="res-detail">
-          <p>中华人民共和国万岁！</p>
+          <p id="content">(#^.^#)</p>
           <li id="confirm3">确定</li>
         </div>
       </div>
     </div>
   </div>
-  <script src="/dist/js/gameSetting.js"></script>
-  <script src="/dist/js/drawCanvas.js"></script>
-  <script src="/dist/js/main.js"></script>
+  <script src="/dist/js/GameSetting.js"></script>
+  <script src="/dist/js/DrawCanvas.js"></script>
+  <script src="/dist/js/Main.js"></script>
+  <script src="/dist/js/MinMax.js"></script>
 </body>
 
 </html>

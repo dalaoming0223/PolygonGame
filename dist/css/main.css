@@ -208,10 +208,12 @@ nav {
 .set-div .set-detail form label input {
   width: 100px;
   height: 25px;
-  border: #757575 2px solid;
+  border: #757575 .2px solid;
+  box-shadow: 0 10px 10px 0 rgba(8, 240, 170, 0.5);
   border-radius: 2px;
   font-size: 20px;
   text-indent: 10px;
+  color: #16A085;
 }
 
 .set-div .set-detail form select {
@@ -226,7 +228,8 @@ nav {
   line-height: 40px;
   text-align: center;
   margin: 20px 60px;
-  border: #757575 2px solid;
+  border: #757575 .2px solid;
+  box-shadow: 0 10px 10px 0 rgba(8, 240, 170, 0.5);
   color: #757575;
   border-radius: 5px;
   cursor: pointer;
