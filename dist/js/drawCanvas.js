@@ -4,7 +4,7 @@ function drawCanvas() {
   var fillStyle = "black";
   //开始画多边形
   //开始路径
-  ctx.font = "40px 微软雅黑";
+  ctx.font = "20px 微软雅黑";
   ctx.fillText("分数：", 20, 40);
   ctx.beginPath();
   ctx.moveTo(verts[0].x, verts[0].y);
@@ -34,7 +34,7 @@ function drawCanvas() {
     ctx.fill();
     ctx.closePath();
     ctx.fillStyle = "#000";
-    ctx.font = "40px Georgia";
+    ctx.font = "20px Georgia";
     ctx.fillText((verts[i].val).toString(), verts[i].x - 5, verts[i].y + 5);
   }
 
@@ -53,9 +53,24 @@ function drawCanvas() {
     }
     */
     ctx.fillStyle = "#000";
-    ctx.font = "40px Georgia";
+    ctx.font = "20px Georgia";
     ctx.fillText(verts[i].operate, newX, newY);
   }
+
+  //画是具体哪条边
+  for (var i = 0; i < num; i++) {
+    if (i == verts.length - 1) {
+      var newX = (verts[i].x + verts[0].x) / 2 - 20;
+      var newY = (verts[i].y + verts[0].y) / 2 - 20;
+    } else {
+      var newX = (verts[i].x + verts[i + 1].x) / 2 - 20;
+      var newY = (verts[i].y + verts[i + 1].y) / 2 - 20;
+    }
+    ctx.fillStyle = "#000";
+    ctx.font = "20px Georgia";
+    ctx.fillText(i + 1, newX, newY);
+  }
+
   status = 0; //当前状态为0  
 }
 
@@ -73,7 +88,7 @@ function game1(e) {
           nowScore = verts[i].val;
       }
   }
-  ctx.font = "40px 微软雅黑";
+  ctx.font = "20px 微软雅黑";
   ctx.fillText("当前分数：" + nowScore.toString(), 20, 40);
   ctx.beginPath();
   ctx.moveTo(verts[0].x, verts[0].y);
@@ -84,6 +99,7 @@ function game1(e) {
               verts[i].edge1 = 0;
               rightTag = i;
               leftTag = i;
+              console.log("首条被删除的边：",i)
               //delEdge.push(i);  //将被删除的边加入被删除边的数组中
               //continue;
           }
@@ -92,6 +108,7 @@ function game1(e) {
           verts[i].edge1 = 0;
           rightTag = i;
           leftTag = i;
+          console.log("首条被删除的边：",i)
           //delEdge.push(i);  //将被删除的边加入被删除边的数组中
           //continue;
       }
@@ -121,7 +138,7 @@ function game1(e) {
       ctx.fill();
       ctx.closePath();
       ctx.fillStyle = "#000";
-      ctx.font = "40px Georgia";
+      ctx.font = "20px Georgia";
       ctx.fillText((verts[i].val).toString(), verts[i].x - 5, verts[i].y + 5);
   }
 
@@ -138,10 +155,22 @@ function game1(e) {
           continue;
       }
       ctx.fillStyle = "#000";
-      ctx.font = "40px Georgia";
+      ctx.font = "20px Georgia";
       ctx.fillText(verts[i].operate, newX, newY);
   }
-  
+    //画是具体哪条边
+    for (var i = 0; i < num; i++) {
+      if (i == verts.length - 1) {
+        var newX = (verts[i].x + verts[0].x) / 2 - 20;
+        var newY = (verts[i].y + verts[0].y) / 2 - 20;
+      } else {
+        var newX = (verts[i].x + verts[i + 1].x) / 2 - 20;
+        var newY = (verts[i].y + verts[i + 1].y) / 2 - 20;
+      }
+      ctx.fillStyle = "#000";
+      ctx.font = "20px Georgia";
+      ctx.fillText(i + 1, newX, newY);
+    }
   status = 1; //修改状态为1
 }
 
@@ -170,7 +199,7 @@ function game2(e) {
       var resString = "";
       resString = resString + "最终得分为：" + (parseInt(verts[0].val)).toString();
       resultText.innerHTML = resString;
-      ctx.font = "40px 微软雅黑";
+      ctx.font = "20px 微软雅黑";
       ctx.fillText("当前分数：" + (verts[0].val).toString(), 20, 40);
       return;
   }
@@ -279,6 +308,7 @@ function game2(e) {
               continue;
           }
       }
+      
   }
   
   string = "delEdge: ";
@@ -306,7 +336,7 @@ function game2(e) {
           nowScore = verts[i].val;
       }
   }
-  ctx.font = "40px 微软雅黑";
+  ctx.font = "20px 微软雅黑";
   ctx.fillText("当前分数：" + nowScore.toString(), 20, 40);
   //画节点圆心
   for(var i = 0; i < verts.length; i++) {
@@ -318,7 +348,7 @@ function game2(e) {
       ctx.fill();
       ctx.closePath();
       ctx.fillStyle = "#000";
-      ctx.font = "40px Georgia";
+      ctx.font = "20px Georgia";
       ctx.fillText((verts[i].val).toString(), verts[i].x - 5, verts[i].y + 5);
   }
   status = 2;
@@ -329,7 +359,7 @@ function game2(e) {
   //画操作符
   for(var i = 0; i < verts.length; i++) {
       ctx.fillStyle = "#000";
-      ctx.font = "40px Georgia";
+      ctx.font = "20px Georgia";
       if(i == verts.length - 1) {
           var newX = (verts[i].x + verts[0].x) / 2 + 5;
           var newY = (verts[i].y + verts[0].y) / 2 + 5;

@@ -354,9 +354,9 @@ function drawBestWay(first, way1, score) {
         background3.css({
           "display": "block"
         })
-        $("#res-title h2").html("如图所示")
+        $("#res-title h2").html("如图")
         var resString = "";
-        resString = resString + "最高分为：" + highestScore.toString() + "</br>";
+        resString = resString + "MAXscore：" + highestScore.toString() + "</br>";
         resString = resString + "删除的第一条边为：" + (firstE + 1).toString() + "</br>";
         resString = resString + "剩余边的删除顺序为：</br>";
         for(var i = 0; i < wayBest.length; i++) {
@@ -366,7 +366,6 @@ function drawBestWay(first, way1, score) {
                 resString = resString + (parseInt(wayBest[i]) + 1).toString() + " → ";
             } 
         }
-        // resultText.innerHTML = resString;
         $("#content").html(resString)
     }, 1000 *(wayBest.length + 2));
 }
@@ -381,7 +380,7 @@ function drawBest(firstE, wayDel, score, times) {
     //开始画多边形
     //开始路径
     ctx.font = "20px 微软雅黑";
-    ctx.fillText("最高分为：" + score.toString(), 20, 40);
+    ctx.fillText("MAXscore：" + score.toString(), 20, 40);
     var string = "";
     var tag;
     if(times > 1) {
@@ -502,4 +501,5 @@ function drawBest(firstE, wayDel, score, times) {
         }
         ctx.fillText(vertsB[i].operate, newX, newY);
     }
+
 }
